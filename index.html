@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scrum</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css">
+      
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+    
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <div class="container">
+    
+        <header>Scrum</header>
+        <main>
+            <div class="column">
+                <div class="column_header column_header_red">
+                    <div class="add_story_button_wrapper">
+                        <div class="add_story_button button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <span>To do</span>
+                </div>
+
+                <div class="story_list"></div>
+            </div>
+
+            <div class="column">
+                <div class="column_header column_header_green">
+                    <div class="add_story_button_wrapper">
+                        <div class="add_story_button button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <span>In progress</span>
+                </div>
+                <div class="story_list"></div>
+            </div>
+
+            <div class="column">
+                <div class="column_header column_header_blue">
+                    <div class="add_story_button_wrapper">
+                        <div class="add_story_button button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <span>Done</span>
+                </div>
+                <div class="story_list"></div>
+            </div>
+            <div id="delete_dialog" class="dialog">
+                <span>Are you sure that you want to delete this story?</span>
+            </div>    
+            <div id="story_dialog" class="dialog">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tab_story">Story</a></li>
+                        <li><a href="#tab_comments">Comments</a></li>
+                    </ul>
+
+                    <div id="tab_story" class="tab">
+                        <div class="lable">Title:</div>
+                        <input type="text" id="title_input" class="text ui-widget-content ui-corner-all" placeholder="Story title">
+
+                        <div class="lable">Description:</div>
+                        <div id="description_input" class="description_input" placeholder="Story description"></div>  
+                        
+                        <div class="tab_footer">
+                            <div class="priority_wrapper">
+                                <div class="priority_lable lable">
+                                    <span>Priority</span>
+                                    <span id="priority" class="priority">4</span>
+                                </div>
+                                <div id="priority_slider"></div>
+                            </div>
+
+                            <div class="due_date_wrapper">
+                                <div class="lable">Due date</div>
+                                <input type="text" id="due_date_input">
+                            </div>
+                        </div>                     
+                    </div>
+
+                    <div id="tab_comments" class="tab">
+                        <div id="comments">
+                            No comments
+                        </div>
+
+                        <div class="add_comment_wrapper">
+                            <button id="add_comment_button" class="ui-button ui-corner-all ui-widget">Add Comment</button>
+                            <textarea id="comment_input" class="text ui-widget-content ui-corner-all" placeholder="Comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
